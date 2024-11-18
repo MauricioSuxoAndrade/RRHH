@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Caja de Salud</title>
+</head>
+<body>
+    <h1>Editar Caja de Salud</h1>
+    <form method="POST">
+        <label for="nombre_c">Nombre:</label>
+        <input type="text" name="nombre_c" value="{{ caja.nombre_c }}" required>
+        <br>
+        <label for="monto_apo">Monto Aportado:</label>
+        <input type="number" name="monto_apo" value="{{ caja.monto_apo }}">
+        <br>
+        <button type="submit">Guardar</button>
+    </form>
+    <br>
+    <a href="/caja_salud">
+        <button>Volver a la lista de Caja de Salud</button>
+    </a>
+</body>
+</html>

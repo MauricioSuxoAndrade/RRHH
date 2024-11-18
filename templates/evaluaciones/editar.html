@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Evaluación</title>
+</head>
+<body>
+    <h1>Editar Evaluación de Desempeño</h1>
+    <form method="POST">
+        <label for="id_candidato">ID Candidato:</label>
+        <input type="number" name="id_candidato" value="{{ evaluacion.id_candidato }}" required>
+        <br>
+        <label for="id_empleado_realiza">ID Empleado Realiza:</label>
+        <input type="number" name="id_empleado_realiza" value="{{ evaluacion.id_empleado_realiza }}" required>
+        <br>
+        <label for="id_empleado_genera">ID Empleado Genera:</label>
+        <input type="number" name="id_empleado_genera" value="{{ evaluacion.id_empleado_genera }}" required>
+        <br>
+        <label for="fecha_evaluacion">Fecha Evaluación:</label>
+        <input type="date" name="fecha_evaluacion" value="{{ evaluacion.fecha_evaluacion }}" required>
+        <br>
+        <label for="puntuacion">Puntuación:</label>
+        <input type="number" name="puntuacion" value="{{ evaluacion.puntuacion }}" required>
+        <br>
+        <label for="comentario">Comentario:</label>
+        <textarea name="comentario">{{ evaluacion.comentario }}</textarea>
+        <br>
+        <button type="submit">Guardar Cambios</button>
+    </form>
+    <br>
+    <a href="/evaluaciones">
+        <button>Volver a la lista de evaluaciones</button>
+    </a>
+</body>
+</html>

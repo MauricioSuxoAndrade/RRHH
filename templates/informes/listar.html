@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Informes</title>
+</head>
+<body>
+    <h1>Lista de Informes</h1>
+    <a href="/informes/crear">Registrar Nuevo Informe</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID Informe</th>
+                <th>ID Empleado</th>
+                <th>Fecha Informe</th>
+                <th>Estado Informe</th>
+                <th>Tipo Informe</th>
+                <th>Criterio Búsqueda</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for informe in informes %}
+            <tr>
+                <td>{{ informe.id_informe }}</td>
+                <td>{{ informe.id_empleado }}</td>
+                <td>{{ informe.fecha_informe }}</td>
+                <td>{{ informe.estado_informe }}</td>
+                <td>{{ informe.tipo_informe }}</td>
+                <td>{{ informe.criterio_busqueda }}</td>
+                <td>
+                    <a href="/informes/editar/{{ informe.id_informe }}">Editar</a>
+                    <a href="/informes/eliminar/{{ informe.id_informe }}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/">
+        <button>Volver a la pantalla principal</button>
+    </a>
+</body>
+</html>

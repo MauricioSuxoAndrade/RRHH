@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Candidato</title>
+</head>
+<body>
+    <h1>Registrar Nuevo Candidato</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="id_departamento">ID Departamento:</label>
+        <input type="number" name="id_departamento" required>
+        <br>
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" required>
+        <br>
+        <label for="ap_paterno">Apellido Paterno:</label>
+        <input type="text" name="ap_paterno" required>
+        <br>
+        <label for="ap_materno">Apellido Materno:</label>
+        <input type="text" name="ap_materno">
+        <br>
+        <label for="fec_nac">Fecha de Nacimiento:</label>
+        <input type="date" name="fec_nac">
+        <br>
+        <label for="telefono">Teléfono:</label>
+        <input type="text" name="telefono">
+        <br>
+        <label for="foto">Foto:</label>
+        <input type="file" name="foto" accept="image/*">
+        <br>
+        <button type="submit">Registrar</button>
+    </form>
+    <br>
+    <a href="/candidatos">
+        <button>Volver a la lista de candidatos</button>
+    </a>
+</body>
+</html>

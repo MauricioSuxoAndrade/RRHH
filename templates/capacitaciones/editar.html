@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Capacitación</title>
+</head>
+<body>
+    <h1>Editar Capacitación</h1>
+    <form method="POST">
+        <label for="id_empleado">ID Empleado:</label>
+        <input type="number" name="id_empleado" value="{{ capacitacion.id_empleado }}" required>
+        <br>
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" value="{{ capacitacion.nombre }}" required>
+        <br>
+        <label for="fecha_ini">Fecha Inicio:</label>
+        <input type="date" name="fecha_ini" value="{{ capacitacion.fecha_ini }}" required>
+        <br>
+        <label for="fecha_fin">Fecha Fin:</label>
+        <input type="date" name="fecha_fin" value="{{ capacitacion.fecha_fin }}">
+        <br>
+        <label for="descripcion">Descripción:</label>
+        <textarea name="descripcion">{{ capacitacion.descripcion }}</textarea>
+        <br>
+        <button type="submit">Guardar Cambios</button>
+    </form>
+    <br>
+    <a href="/capacitaciones">
+        <button>Volver a la lista de capacitaciones</button>
+    </a>
+</body>
+</html>

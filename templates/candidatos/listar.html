@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Candidatos</title>
+</head>
+<body>
+    <h1>Lista de Candidatos</h1>
+    <a href="/candidatos/crear">Registrar Nuevo Candidato</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Fecha Nac.</th>
+                <th>Teléfono</th>
+                <th>Foto</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for candidato in candidatos %}
+            <tr>
+                <td>{{ candidato.id_candidato }}</td>
+                <td>{{ candidato.nombre }}</td>
+                <td>{{ candidato.ap_paterno }}</td>
+                <td>{{ candidato.ap_materno }}</td>
+                <td>{{ candidato.fec_nac }}</td>
+                <td>{{ candidato.telefono }}</td>
+                <td>
+                    {% if candidato.foto %}
+                    <a href="/candidatos/foto/{{ candidato.id_candidato }}">Ver Foto</a>
+                    {% else %}
+                    Sin Foto
+                    {% endif %}
+                </td>
+                <td>
+                    <a href="/candidatos/editar/{{ candidato.id_candidato }}">Editar</a>
+                    <a href="/candidatos/eliminar/{{ candidato.id_candidato }}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/">
+        <button>Volver a la pantalla principal</button>
+    </a>
+</body>
+</html>

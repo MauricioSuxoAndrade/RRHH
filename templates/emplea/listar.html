@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Relaciones Emplea</title>
+</head>
+<body>
+    <h1>Lista de Relaciones Emplea</h1>
+    <a href="/emplea/crear">Agregar Relación</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID Acceso</th>
+                <th>ID Rol</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for relacion in emplea %}
+            <tr>
+                <td>{{ relacion.id_acceso }}</td>
+                <td>{{ relacion.id_rol }}</td>
+                <td>
+                    <a href="/emplea/editar/{{ relacion.id_acceso }}/{{ relacion.id_rol }}">Editar</a>
+                    <a href="/emplea/eliminar/{{ relacion.id_acceso }}/{{ relacion.id_rol }}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/">
+        <button>Volver a la pantalla principal</button>
+    </a>
+</body>
+</html>

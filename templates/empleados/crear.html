@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Empleado</title>
+</head>
+<body>
+    <h1>Registrar Nuevo Empleado</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="id_usuario">ID Usuario:</label>
+        <input type="number" name="id_usuario" required>
+        <br>
+        <label for="id_departamento_pertenece">ID Departamento:</label>
+        <input type="number" name="id_departamento_pertenece" required>
+        <br>
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" required>
+        <br>
+        <label for="ap_paterno">Apellido Paterno:</label>
+        <input type="text" name="ap_paterno" required>
+        <br>
+        <label for="ap_materno">Apellido Materno:</label>
+        <input type="text" name="ap_materno">
+        <br>
+        <label for="fec_nac">Fecha de Nacimiento:</label>
+        <input type="date" name="fec_nac">
+        <br>
+        <label for="foto">Foto:</label>
+        <input type="file" name="foto" accept="image/*">
+        <br>
+        <label for="direccion">Dirección:</label>
+        <input type="text" name="direccion">
+        <br>
+        <label for="cargo">Cargo:</label>
+        <input type="text" name="cargo">
+        <br>
+        <label for="est_emp">Estado:</label>
+        <input type="text" name="est_emp">
+        <br>
+        <button type="submit">Registrar</button>
+    </form>
+    <br>
+    <a href="/empleados">
+        <button>Volver a la lista de empleados</button>
+    </a>
+</body>
+</html>

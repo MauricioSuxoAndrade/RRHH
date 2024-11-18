@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Contrato</title>
+</head>
+<body>
+    <h1>Editar Contrato</h1>
+    <form method="POST">
+        <label for="id_empleado">ID Empleado:</label>
+        <input type="number" name="id_empleado" value="{{ contrato.id_empleado }}" required>
+        <br>
+        <label for="tipo_cont">Tipo de Contrato:</label>
+        <input type="text" name="tipo_cont" value="{{ contrato.tipo_cont }}" required>
+        <br>
+        <label for="fec_ini">Fecha Inicio:</label>
+        <input type="date" name="fec_ini" value="{{ contrato.fec_ini }}" required>
+        <br>
+        <label for="fec_fin">Fecha Fin:</label>
+        <input type="date" name="fec_fin" value="{{ contrato.fec_fin }}">
+        <br>
+        <label for="condiciones">Condiciones:</label>
+        <textarea name="condiciones">{{ contrato.condiciones }}</textarea>
+        <br>
+        <label for="salario">Salario:</label>
+        <input type="number" name="salario" value="{{ contrato.salario }}" required>
+        <br>
+        <button type="submit">Guardar Cambios</button>
+    </form>
+    <br>
+    <a href="/contratos">
+        <button>Volver a la lista de contratos</button>
+    </a>
+</body>
+</html>

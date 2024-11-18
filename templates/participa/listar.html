@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Participaciones</title>
+</head>
+<body>
+    <h1>Lista de Participaciones</h1>
+    <a href="/participaciones/crear">Registrar Nueva Participación</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID Empleado</th>
+                <th>ID Capacitación</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for participacion in participaciones %}
+            <tr>
+                <td>{{ participacion.id_empleado }}</td>
+                <td>{{ participacion.id_capacitacion }}</td>
+                <td>
+                    <a href="/participaciones/editar/{{ participacion.id_empleado }}/{{ participacion.id_capacitacion }}">Editar</a>
+                    <a href="/participaciones/eliminar/{{ participacion.id_empleado }}/{{ participacion.id_capacitacion }}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/">
+        <button>Volver a la pantalla principal</button>
+    </a>
+</body>
+</html>

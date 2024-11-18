@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Nuevo Informe</title>
+</head>
+<body>
+    <h1>Registrar Nuevo Informe</h1>
+    <form method="POST">
+        <label for="id_empleado">ID Empleado:</label>
+        <input type="number" name="id_empleado" required>
+        <br>
+        <label for="fecha_informe">Fecha Informe:</label>
+        <input type="date" name="fecha_informe" required>
+        <br>
+        <label for="estado_informe">Estado Informe:</label>
+        <input type="text" name="estado_informe" required>
+        <br>
+        <label for="tipo_informe">Tipo Informe:</label>
+        <input type="text" name="tipo_informe" required>
+        <br>
+        <label for="criterio_busqueda">Criterio de Búsqueda:</label>
+        <input type="text" name="criterio_busqueda">
+        <br>
+        <button type="submit">Registrar</button>
+    </form>
+    <br>
+    <a href="/informes">
+        <button>Volver a la lista de informes</button>
+    </a>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Usuarios</title>
+</head>
+<body>
+    <h1>Lista de Usuarios</h1>
+    <a href="/usuarios/crear">Crear Usuario</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for usuario in usuarios %}
+            <tr>
+                <td>{{ usuario.id_usuario }}</td>
+                <td>{{ usuario.nombre_usuario }}</td>
+                <td>{{ usuario.correo }}</td>
+                <td>{{ usuario.estado_usuario }}</td>
+                <td>
+                    <a href="/usuarios/editar/{{ usuario.id_usuario }}">Editar</a>
+                    <a href="/usuarios/eliminar/{{ usuario.id_usuario }}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/" style="text-decoration: none;">
+        <button>Volver a la pantalla principal</button>
+    </a>
+</body>
+</html>

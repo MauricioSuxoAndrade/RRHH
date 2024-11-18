@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Departamento</title>
+</head>
+<body>
+    <h1>Editar Departamento</h1>
+    <form method="POST">
+        <label for="id_jefe">ID Jefe:</label>
+        <input type="number" name="id_jefe" value="{{ departamento.id_jefe }}" required>
+        <br>
+        <label for="nom_departamento">Nombre del Departamento:</label>
+        <input type="text" name="nom_departamento" value="{{ departamento.nom_departamento }}" required>
+        <br>
+        <label for="descripcion">Descripción:</label>
+        <textarea name="descripcion">{{ departamento.descripcion }}</textarea>
+        <br>
+        <button type="submit">Guardar Cambios</button>
+    </form>
+    <br>
+    <a href="/departamentos">
+        <button>Volver a la lista de departamentos</button>
+    </a>
+</body>
+</html>

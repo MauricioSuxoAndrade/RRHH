@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Vacantes</title>
+</head>
+<body>
+    <h1>Lista de Vacantes</h1>
+    <a href="/vacantes/crear">Registrar Nueva Vacante</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID Vacante</th>
+                <th>ID Departamento</th>
+                <th>Título</th>
+                <th>Descripción</th>
+                <th>Fecha Publicación</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for vacante in vacantes %}
+            <tr>
+                <td>{{ vacante.id_vacante }}</td>
+                <td>{{ vacante.id_departamento }}</td>
+                <td>{{ vacante.titulo }}</td>
+                <td>{{ vacante.descripcion }}</td>
+                <td>{{ vacante.fec_publi }}</td>
+                <td>
+                    <a href="/vacantes/editar/{{ vacante.id_vacante }}">Editar</a>
+                    <a href="/vacantes/eliminar/{{ vacante.id_vacante }}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/">
+        <button>Volver a la pantalla principal</button>
+    </a>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD App</title>
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #menu {
+            width: 200px;
+            background-color: #f0f0f0;
+            padding: 15px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        #menu a {
+            display: block;
+            text-decoration: none;
+            color: #333;
+            margin: 10px 0;
+        }
+        #menu a:hover {
+            color: #007BFF;
+        }
+        #content {
+            flex: 1;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <h3>Menú</h3>
+        <a href="/">Inicio</a>
+        <a href="/casas">Casas</a>
+        <a href="/muestra">Muestra</a>
+    </div>
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

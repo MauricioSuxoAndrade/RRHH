@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Nueva Vacante</title>
+</head>
+<body>
+    <h1>Registrar Nueva Vacante</h1>
+    <form method="POST">
+        <label for="id_departamento">ID Departamento:</label>
+        <input type="number" name="id_departamento" required>
+        <br>
+        <label for="titulo">Título:</label>
+        <input type="text" name="titulo" required>
+        <br>
+        <label for="descripcion">Descripción:</label>
+        <textarea name="descripcion"></textarea>
+        <br>
+        <label for="fec_publi">Fecha Publicación:</label>
+        <input type="date" name="fec_publi">
+        <br>
+        <button type="submit">Registrar</button>
+    </form>
+    <br>
+    <a href="/vacantes">
+        <button>Volver a la lista de vacantes</button>
+    </a>
+</body>
+</html>

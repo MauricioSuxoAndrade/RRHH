@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Informe</title>
+</head>
+<body>
+    <h1>Editar Informe</h1>
+    <form method="POST">
+        <label for="id_empleado">ID Empleado:</label>
+        <input type="number" name="id_empleado" value="{{ informe.id_empleado }}" required>
+        <br>
+        <label for="fecha_informe">Fecha Informe:</label>
+        <input type="date" name="fecha_informe" value="{{ informe.fecha_informe }}" required>
+        <br>
+        <label for="estado_informe">Estado Informe:</label>
+        <input type="text" name="estado_informe" value="{{ informe.estado_informe }}" required>
+        <br>
+        <label for="tipo_informe">Tipo Informe:</label>
+        <input type="text" name="tipo_informe" value="{{ informe.tipo_informe }}" required>
+        <br>
+        <label for="criterio_busqueda">Criterio de Búsqueda:</label>
+        <input type="text" name="criterio_busqueda" value="{{ informe.criterio_busqueda }}">
+        <br>
+        <button type="submit">Guardar Cambios</button>
+    </form>
+    <br>
+    <a href="/informes">
+        <button>Volver a la lista de informes</button>
+    </a>
+</body>
+</html>

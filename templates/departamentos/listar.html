@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Departamentos</title>
+</head>
+<body>
+    <h1>Lista de Departamentos</h1>
+    <a href="/departamentos/crear">Registrar Nuevo Departamento</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>ID Jefe</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for departamento in departamentos %}
+            <tr>
+                <td>{{ departamento.id_departamento }}</td>
+                <td>{{ departamento.id_jefe }}</td>
+                <td>{{ departamento.nom_departamento }}</td>
+                <td>{{ departamento.descripcion }}</td>
+                <td>
+                    <a href="/departamentos/editar/{{ departamento.id_departamento }}">Editar</a>
+                    <a href="/departamentos/eliminar/{{ departamento.id_departamento }}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/">
+        <button>Volver a la pantalla principal</button>
+    </a>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Permisos</title>
+</head>
+<body>
+    <h1>Lista de Permisos</h1>
+    <a href="/permisos/crear">Registrar Nuevo Permiso</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID Permiso</th>
+                <th>ID Empleado Aprobador</th>
+                <th>ID Empleado Solicitante</th>
+                <th>Tipo de Permiso</th>
+                <th>Fecha de Solicitud</th>
+                <th>Fecha de Aprobación</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for permiso in permisos %}
+            <tr>
+                <td>{{ permiso.id_permiso }}</td>
+                <td>{{ permiso.id_empleado_aprobador }}</td>
+                <td>{{ permiso.id_empleado_solicitante }}</td>
+                <td>{{ permiso.tipo_permiso }}</td>
+                <td>{{ permiso.fecha_solicitud }}</td>
+                <td>{{ permiso.fecha_aprobacion }}</td>
+                <td>{{ permiso.estado }}</td>
+                <td>
+                    <a href="/permisos/editar/{{ permiso.id_permiso }}">Editar</a>
+                    <a href="/permisos/eliminar/{{ permiso.id_permiso }}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/">
+        <button>Volver a la pantalla principal</button>
+    </a>
+</body>
+</html>

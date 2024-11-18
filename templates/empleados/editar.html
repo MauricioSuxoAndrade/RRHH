@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Empleado</title>
+</head>
+<body>
+    <h1>Editar Empleado</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="id_usuario">ID Usuario:</label>
+        <input type="number" name="id_usuario" value="{{ empleado.id_usuario }}" required>
+        <br>
+        <label for="id_departamento_pertenece">ID Departamento:</label>
+        <input type="number" name="id_departamento_pertenece" value="{{ empleado.id_departamento_pertenece }}" required>
+        <br>
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" value="{{ empleado.nombre }}" required>
+        <br>
+        <label for="ap_paterno">Apellido Paterno:</label>
+        <input type="text" name="ap_paterno" value="{{ empleado.ap_paterno }}" required>
+        <br>
+        <label for="ap_materno">Apellido Materno:</label>
+        <input type="text" name="ap_materno" value="{{ empleado.ap_materno }}">
+        <br>
+        <label for="fec_nac">Fecha de Nacimiento:</label>
+        <input type="date" name="fec_nac" value="{{ empleado.fec_nac }}">
+        <br>
+        <label for="foto">Foto:</label>
+        {% if empleado.foto %}
+        <p>Foto Actual: <a href="/empleados/foto/{{ empleado.id_empleado }}">Ver Foto</a></p>
+        {% endif %}
+        <input type="file" name="foto" accept="image/*">
+        <br>
+        <label for="direccion">Dirección:</label>
+        <input type="text" name="direccion" value="{{ empleado.direccion }}">
+        <br>
+        <label for="cargo">Cargo:</label>
+        <input type="text" name="cargo" value="{{ empleado.cargo }}">
+        <br>
+        <label for="est_emp">Estado:</label>
+        <input type="text" name="est_emp" value="{{ empleado.est_emp }}">
+        <br>
+        <button type="submit">Guardar Cambios</button>
+    </form>
+    <br>
+    <a href="/empleados">
+        <button>Volver a la lista de empleados</button>
+    </a>
+</body>
+</html>

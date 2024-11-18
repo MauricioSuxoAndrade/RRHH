@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Notificación</title>
+</head>
+<body>
+    <h1>Editar Notificación</h1>
+    <form method="POST">
+        <label for="id_usuario_envia">ID Usuario Envía:</label>
+        <input type="number" name="id_usuario_envia" value="{{ notificacion.id_usuario_envia }}" required>
+        <br>
+        <label for="id_usuario_recibe">ID Usuario Recibe:</label>
+        <input type="number" name="id_usuario_recibe" value="{{ notificacion.id_usuario_recibe }}" required>
+        <br>
+        <label for="fecha_notificacion">Fecha de Notificación:</label>
+        <input type="date" name="fecha_notificacion" value="{{ notificacion.fecha_notificacion }}" required>
+        <br>
+        <button type="submit">Guardar Cambios</button>
+    </form>
+    <br>
+    <a href="/notificaciones">
+        <button>Volver a la lista de notificaciones</button>
+    </a>
+</body>
+</html>

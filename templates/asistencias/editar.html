@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Asistencia</title>
+</head>
+<body>
+    <h1>Editar Asistencia</h1>
+    <form method="POST">
+        <label for="id_empleado">ID Empleado:</label>
+        <input type="number" name="id_empleado" value="{{ asistencia.id_empleado }}" required>
+        <br>
+        <label for="fecha_asis">Fecha:</label>
+        <input type="date" name="fecha_asis" value="{{ asistencia.fecha_asis }}" required>
+        <br>
+        <label for="hora_ent">Hora Entrada:</label>
+        <input type="time" name="hora_ent" value="{{ asistencia.hora_ent }}">
+        <br>
+        <label for="hora_sal">Hora Salida:</label>
+        <input type="time" name="hora_sal" value="{{ asistencia.hora_sal }}">
+        <br>
+        <label for="hora_extr">Hora Extra:</label>
+        <input type="time" name="hora_extr" value="{{ asistencia.hora_extr }}">
+        <br>
+        <button type="submit">Guardar Cambios</button>
+    </form>
+    <br>
+    <a href="/asistencias">
+        <button>Volver a la lista de asistencias</button>
+    </a>
+</body>
+</html>

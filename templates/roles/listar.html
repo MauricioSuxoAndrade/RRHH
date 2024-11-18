@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Roles</title>
+</head>
+<body>
+    <h1>Lista de Roles</h1>
+    <a href="/roles/crear">Registrar Nuevo Rol</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID Rol</th>
+                <th>Nombre del Rol</th>
+                <th>Descripción</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for rol in roles %}
+            <tr>
+                <td>{{ rol.id_rol }}</td>
+                <td>{{ rol.nombre_rol }}</td>
+                <td>{{ rol.descripcion_rol }}</td>
+                <td>
+                    <a href="/roles/editar/{{ rol.id_rol }}">Editar</a>
+                    <a href="/roles/eliminar/{{ rol.id_rol }}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/">
+        <button>Volver a la pantalla principal</button>
+    </a>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Notificaciones</title>
+</head>
+<body>
+    <h1>Lista de Notificaciones</h1>
+    <a href="/notificaciones/crear">Registrar Nueva Notificación</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID Usuario Envía</th>
+                <th>ID Usuario Recibe</th>
+                <th>Fecha de Notificación</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for notificacion in notificaciones %}
+            <tr>
+                <td>{{ notificacion.id_usuario_envia }}</td>
+                <td>{{ notificacion.id_usuario_recibe }}</td>
+                <td>{{ notificacion.fecha_notificacion }}</td>
+                <td>
+                    <a href="/notificaciones/editar/{{ notificacion.id_usuario_envia }}/{{ notificacion.id_usuario_recibe }}">Editar</a>
+                    <a href="/notificaciones/eliminar/{{ notificacion.id_usuario_envia }}/{{ notificacion.id_usuario_recibe }}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/">
+        <button>Volver a la pantalla principal</button>
+    </a>
+</body>
+</html>

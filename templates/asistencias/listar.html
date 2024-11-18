@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Asistencias</title>
+</head>
+<body>
+    <h1>Lista de Asistencias</h1>
+    <a href="/asistencias/crear">Registrar Nueva Asistencia</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>ID Empleado</th>
+                <th>Fecha</th>
+                <th>Hora Entrada</th>
+                <th>Hora Salida</th>
+                <th>Hora Extra</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for asistencia in asistencias %}
+            <tr>
+                <td>{{ asistencia.id_asistencia }}</td>
+                <td>{{ asistencia.id_empleado }}</td>
+                <td>{{ asistencia.fecha_asis }}</td>
+                <td>{{ asistencia.hora_ent }}</td>
+                <td>{{ asistencia.hora_sal }}</td>
+                <td>{{ asistencia.hora_extr }}</td>
+                <td>
+                    <a href="/asistencias/editar/{{ asistencia.id_asistencia }}">Editar</a>
+                    <a href="/asistencias/eliminar/{{ asistencia.id_asistencia }}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/">
+        <button>Volver a la pantalla principal</button>
+    </a>
+</body>
+</html>

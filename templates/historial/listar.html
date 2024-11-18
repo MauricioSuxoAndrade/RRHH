@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Historiales</title>
+</head>
+<body>
+    <h1>Lista de Historiales</h1>
+    <a href="/historial/crear">Registrar Nuevo Historial</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID Historial</th>
+                <th>ID Empleado</th>
+                <th>Fecha de Cambio</th>
+                <th>Tipo de Cambio</th>
+                <th>Detalle del Cambio</th>
+                <th>Motivo del Cambio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for registro in historial %}
+            <tr>
+                <td>{{ registro.id_historial }}</td>
+                <td>{{ registro.id_empleado }}</td>
+                <td>{{ registro.fecha_cambio }}</td>
+                <td>{{ registro.tipo_cambio }}</td>
+                <td>{{ registro.det_cambio }}</td>
+                <td>{{ registro.mot_cambio }}</td>
+                <td>
+                    <a href="/historial/editar/{{ registro.id_historial }}">Editar</a>
+                    <a href="/historial/eliminar/{{ registro.id_historial }}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/">
+        <button>Volver a la pantalla principal</button>
+    </a>
+</body>
+</html>

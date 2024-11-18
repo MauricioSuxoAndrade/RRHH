@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Usuario</title>
+</head>
+<body>
+    <h1>Editar Usuario</h1>
+    <form method="POST">
+        <label for="nombre_usuario">Nombre:</label>
+        <input type="text" name="nombre_usuario" value="{{ usuario.nombre_usuario }}" required>
+        <br>
+        <label for="correo">Correo:</label>
+        <input type="email" name="correo" value="{{ usuario.correo }}" required>
+        <br>
+        <label for="estado_usuario">Estado:</label>
+        <input type="text" name="estado_usuario" value="{{ usuario.estado_usuario }}">
+        <br>
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" name="contrasena" value="{{ usuario.contrasena }}" required>
+        <br>
+        <label for="fecha_creacion">Fecha de Creación:</label>
+        <input type="date" name="fecha_creacion" value="{{ usuario.fecha_creacion }}">
+        <br>
+        <button type="submit">Actualizar</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Candidato</title>
+</head>
+<body>
+    <h1>Editar Candidato</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="id_departamento">ID Departamento:</label>
+        <input type="number" name="id_departamento" value="{{ candidato.id_departamento }}" required>
+        <br>
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" value="{{ candidato.nombre }}" required>
+        <br>
+        <label for="ap_paterno">Apellido Paterno:</label>
+        <input type="text" name="ap_paterno" value="{{ candidato.ap_paterno }}" required>
+        <br>
+        <label for="ap_materno">Apellido Materno:</label>
+        <input type="text" name="ap_materno" value="{{ candidato.ap_materno }}">
+        <br>
+        <label for="fec_nac">Fecha de Nacimiento:</label>
+        <input type="date" name="fec_nac" value="{{ candidato.fec_nac }}">
+        <br>
+        <label for="telefono">Teléfono:</label>
+        <input type="text" name="telefono" value="{{ candidato.telefono }}">
+        <br>
+        <label for="foto">Foto:</label>
+        <input type="file" name="foto" accept="image/*">
+        <br>
+        <button type="submit">Guardar Cambios</button>
+    </form>
+    <br>
+    <a href="/candidatos">
+        <button>Volver a la lista de candidatos</button>
+    </a>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Nuevo Historial</title>
+</head>
+<body>
+    <h1>Registrar Nuevo Historial</h1>
+    <form method="POST">
+        <label for="id_empleado">ID Empleado:</label>
+        <input type="number" name="id_empleado" required>
+        <br>
+        <label for="fecha_cambio">Fecha de Cambio:</label>
+        <input type="date" name="fecha_cambio" required>
+        <br>
+        <label for="tipo_cambio">Tipo de Cambio:</label>
+        <input type="text" name="tipo_cambio" required>
+        <br>
+        <label for="det_cambio">Detalle del Cambio:</label>
+        <textarea name="det_cambio" required></textarea>
+        <br>
+        <label for="mot_cambio">Motivo del Cambio:</label>
+        <textarea name="mot_cambio"></textarea>
+        <br>
+        <button type="submit">Registrar</button>
+    </form>
+    <br>
+    <a href="/historial">
+        <button>Volver a la lista de historiales</button>
+    </a>
+</body>
+</html>

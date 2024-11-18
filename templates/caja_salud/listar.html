@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Caja de Salud</title>
+</head>
+<body>
+    <h1>Lista de Caja de Salud</h1>
+    <a href="/caja_salud/crear">Crear Caja de Salud</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Monto Aportado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for caja in cajas %}
+            <tr>
+                <td>{{ caja.id_caja }}</td>
+                <td>{{ caja.nombre_c }}</td>
+                <td>{{ caja.monto_apo }}</td>
+                <td>
+                    <a href="/caja_salud/editar/{{ caja.id_caja }}">Editar</a>
+                    <a href="/caja_salud/eliminar/{{ caja.id_caja }}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/">
+        <button>Volver a la pantalla principal</button>
+    </a>
+</body>
+</html>

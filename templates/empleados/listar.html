@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Empleados</title>
+</head>
+<body>
+    <h1>Lista de Empleados</h1>
+    <a href="/empleados/crear">Registrar Nuevo Empleado</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>ID Usuario</th>
+                <th>ID Departamento</th>
+                <th>Nombre</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Fecha Nac.</th>
+                <th>Foto</th>
+                <th>Dirección</th>
+                <th>Cargo</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for empleado in empleados %}
+            <tr>
+                <td>{{ empleado.id_empleado }}</td>
+                <td>{{ empleado.id_usuario }}</td>
+                <td>{{ empleado.id_departamento_pertenece }}</td>
+                <td>{{ empleado.nombre }}</td>
+                <td>{{ empleado.ap_paterno }}</td>
+                <td>{{ empleado.ap_materno }}</td>
+                <td>{{ empleado.fec_nac }}</td>
+                <td>
+                    {% if empleado.foto %}
+                    <a href="/empleados/foto/{{ empleado.id_empleado }}">Ver Foto</a>
+                    {% else %}
+                    Sin Foto
+                    {% endif %}
+                </td>
+                <td>{{ empleado.direccion }}</td>
+                <td>{{ empleado.cargo }}</td>
+                <td>{{ empleado.est_emp }}</td>
+                <td>
+                    <a href="/empleados/editar/{{ empleado.id_empleado }}">Editar</a>
+                    <a href="/empleados/eliminar/{{ empleado.id_empleado }}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/">
+        <button>Volver a la pantalla principal</button>
+    </a>
+</body>
+</html>

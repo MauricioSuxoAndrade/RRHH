@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Postulaciones</title>
+</head>
+<body>
+    <h1>Lista de Postulaciones</h1>
+    <a href="/postulaciones/crear">Registrar Nueva Postulación</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID Vacante</th>
+                <th>ID Candidato</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for postulacion in postulaciones %}
+            <tr>
+                <td>{{ postulacion.id_vacante }}</td>
+                <td>{{ postulacion.id_candidato }}</td>
+                <td>
+                    <a href="/postulaciones/editar/{{ postulacion.id_vacante }}/{{ postulacion.id_candidato }}">Editar</a>
+                    <a href="/postulaciones/eliminar/{{ postulacion.id_vacante }}/{{ postulacion.id_candidato }}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/">
+        <button>Volver a la pantalla principal</button>
+    </a>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Contratos</title>
+</head>
+<body>
+    <h1>Lista de Contratos</h1>
+    <a href="/contratos/crear">Registrar Nuevo Contrato</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>ID Empleado</th>
+                <th>Tipo</th>
+                <th>Fecha Inicio</th>
+                <th>Fecha Fin</th>
+                <th>Condiciones</th>
+                <th>Salario</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for contrato in contratos %}
+            <tr>
+                <td>{{ contrato.id_contrato }}</td>
+                <td>{{ contrato.id_empleado }}</td>
+                <td>{{ contrato.tipo_cont }}</td>
+                <td>{{ contrato.fec_ini }}</td>
+                <td>{{ contrato.fec_fin }}</td>
+                <td>{{ contrato.condiciones }}</td>
+                <td>{{ contrato.salario }}</td>
+                <td>
+                    <a href="/contratos/editar/{{ contrato.id_contrato }}">Editar</a>
+                    <a href="/contratos/eliminar/{{ contrato.id_contrato }}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/">
+        <button>Volver a la pantalla principal</button>
+    </a>
+</body>
+</html>

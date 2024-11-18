@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Acceso</title>
+</head>
+<body>
+    <h1>Editar Acceso</h1>
+    <form method="POST">
+        <label for="nombre_acceso">Nombre:</label>
+        <input type="text" name="nombre_acceso" value="{{ acceso.nombre_acceso }}" required>
+        <br>
+        <label for="descripcion_acceso">Descripción:</label>
+        <input type="text" name="descripcion_acceso" value="{{ acceso.descripcion_acceso }}">
+        <br>
+        <button type="submit">Guardar</button>
+    </form>
+    <br>
+    <a href="/accesos">
+        <button>Volver a la lista de accesos</button>
+    </a>
+</body>
+</html>

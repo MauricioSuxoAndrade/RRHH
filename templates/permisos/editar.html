@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Permiso</title>
+</head>
+<body>
+    <h1>Editar Permiso</h1>
+    <form method="POST">
+        <label for="id_empleado_aprobador">ID Empleado Aprobador:</label>
+        <input type="number" name="id_empleado_aprobador" value="{{ permiso.id_empleado_aprobador }}" required>
+        <br>
+        <label for="id_empleado_solicitante">ID Empleado Solicitante:</label>
+        <input type="number" name="id_empleado_solicitante" value="{{ permiso.id_empleado_solicitante }}" required>
+        <br>
+        <label for="tipo_permiso">Tipo de Permiso:</label>
+        <input type="text" name="tipo_permiso" value="{{ permiso.tipo_permiso }}" required>
+        <br>
+        <label for="fecha_solicitud">Fecha de Solicitud:</label>
+        <input type="date" name="fecha_solicitud" value="{{ permiso.fecha_solicitud }}" required>
+        <br>
+        <label for="fecha_aprobacion">Fecha de Aprobación:</label>
+        <input type="date" name="fecha_aprobacion" value="{{ permiso.fecha_aprobacion }}">
+        <br>
+        <label for="estado">Estado:</label>
+        <input type="text" name="estado" value="{{ permiso.estado }}" required>
+        <br>
+        <button type="submit">Guardar Cambios</button>
+    </form>
+    <br>
+    <a href="/permisos">
+        <button>Volver a la lista de permisos</button>
+    </a>
+</body>
+</html>

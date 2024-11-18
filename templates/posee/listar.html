@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Relaciones Posee</title>
+</head>
+<body>
+    <h1>Lista de Relaciones Posee</h1>
+    <a href="/posee/crear">Registrar Nueva Relación</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID Rol</th>
+                <th>ID Usuario</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for relacion in relaciones %}
+            <tr>
+                <td>{{ relacion.id_rol }}</td>
+                <td>{{ relacion.id_usuario }}</td>
+                <td>
+                    <a href="/posee/editar/{{ relacion.id_rol }}/{{ relacion.id_usuario }}">Editar</a>
+                    <a href="/posee/eliminar/{{ relacion.id_rol }}/{{ relacion.id_usuario }}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/">
+        <button>Volver a la pantalla principal</button>
+    </a>
+</body>
+</html>

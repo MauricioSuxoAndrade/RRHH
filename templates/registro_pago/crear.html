@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Nuevo Pago</title>
+</head>
+<body>
+    <h1>Registrar Nuevo Pago</h1>
+    <form method="POST">
+        <label for="id_empleado">ID Empleado:</label>
+        <input type="number" name="id_empleado" required>
+        <br>
+        <label for="id_caja">ID Caja:</label>
+        <input type="number" name="id_caja" required>
+        <br>
+        <label for="id_afp">ID AFP:</label>
+        <input type="number" name="id_afp" required>
+        <br>
+        <label for="fecha_gen">Fecha Generación:</label>
+        <input type="date" name="fecha_gen" required>
+        <br>
+        <label for="sueldo_base">Sueldo Base:</label>
+        <input type="number" name="sueldo_base" required>
+        <br>
+        <label for="deducciones">Deducciones:</label>
+        <input type="number" name="deducciones" required>
+        <br>
+        <label for="bonificaciones">Bonificaciones:</label>
+        <input type="number" name="bonificaciones" required>
+        <br>
+        <button type="submit">Registrar</button>
+    </form>
+    <br>
+    <a href="/registros_pago">
+        <button>Volver a la lista de registros</button>
+    </a>
+</body>
+</html>

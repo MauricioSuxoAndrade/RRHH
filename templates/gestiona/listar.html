@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Relaciones Gestiona</title>
+</head>
+<body>
+    <h1>Lista de Relaciones Gestiona</h1>
+    <a href="/gestiona/crear">Agregar Relación</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID Rol</th>
+                <th>ID Usuario</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for gestion in gestiona %}
+            <tr>
+                <td>{{ gestion.id_rol }}</td>
+                <td>{{ gestion.id_usuario }}</td>
+                <td>
+                    <a href="/gestiona/editar/{{ gestion.id_rol }}/{{ gestion.id_usuario }}">Editar</a>
+                    <a href="/gestiona/eliminar/{{ gestion.id_rol }}/{{ gestion.id_usuario }}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/">
+        <button>Volver a la pantalla principal</button>
+    </a>
+</body>
+</html>

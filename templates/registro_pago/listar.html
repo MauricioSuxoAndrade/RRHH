@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Registros de Pago</title>
+</head>
+<body>
+    <h1>Lista de Registros de Pago</h1>
+    <a href="/registros_pago/crear">Registrar Nuevo Pago</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID Pago</th>
+                <th>ID Empleado</th>
+                <th>ID Caja</th>
+                <th>ID AFP</th>
+                <th>Fecha Generación</th>
+                <th>Sueldo Base</th>
+                <th>Deducciones</th>
+                <th>Bonificaciones</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for registro in registros %}
+            <tr>
+                <td>{{ registro.id_pago }}</td>
+                <td>{{ registro.id_empleado }}</td>
+                <td>{{ registro.id_caja }}</td>
+                <td>{{ registro.id_afp }}</td>
+                <td>{{ registro.fecha_gen }}</td>
+                <td>{{ registro.sueldo_base }}</td>
+                <td>{{ registro.deducciones }}</td>
+                <td>{{ registro.bonificaciones }}</td>
+                <td>
+                    <a href="/registros_pago/editar/{{ registro.id_pago }}">Editar</a>
+                    <a href="/registros_pago/eliminar/{{ registro.id_pago }}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/">
+        <button>Volver a la pantalla principal</button>
+    </a>
+</body>
+</html>

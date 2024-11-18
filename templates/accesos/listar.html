@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Accesos</title>
+</head>
+<body>
+    <h1>Lista de Accesos</h1>
+    <a href="/accesos/crear">Crear Acceso</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for acceso in accesos %}
+            <tr>
+                <td>{{ acceso.id_acceso }}</td>
+                <td>{{ acceso.nombre_acceso }}</td>
+                <td>{{ acceso.descripcion_acceso }}</td>
+                <td>
+                    <a href="/accesos/editar/{{ acceso.id_acceso }}">Editar</a>
+                    <a href="/accesos/eliminar/{{ acceso.id_acceso }}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/" style="text-decoration: none;">
+        <button>Volver a la pantalla principal</button>
+    </a>
+</body>
+</html>

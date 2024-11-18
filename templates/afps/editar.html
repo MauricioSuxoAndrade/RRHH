@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar AFP</title>
+</head>
+<body>
+    <h1>Editar AFP</h1>
+    <form method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" value="{{ afp.nombre }}" required>
+        <br>
+        <label for="monto_apo">Monto Aportado:</label>
+        <input type="number" name="monto_apo" value="{{ afp.monto_apo }}" required>
+        <br>
+        <button type="submit">Guardar</button>
+    </form>
+    <br>
+    <a href="/afps">
+        <button>Volver a la lista de AFPs</button>
+    </a>
+</body>
+</html>

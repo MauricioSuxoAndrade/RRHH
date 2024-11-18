@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de AFPs</title>
+</head>
+<body>
+    <h1>Lista de AFPs</h1>
+    <a href="/afps/crear">Crear AFP</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Monto Aportado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for afp in afps %}
+            <tr>
+                <td>{{ afp.id_afp }}</td>
+                <td>{{ afp.nombre }}</td>
+                <td>{{ afp.monto_apo }}</td>
+                <td>
+                    <a href="/afps/editar/{{ afp.id_afp }}">Editar</a>
+                    <a href="/afps/eliminar/{{ afp.id_afp }}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/" style="text-decoration: none;">
+        <button>Volver a la pantalla principal</button>
+    </a>
+</body>
+</html>

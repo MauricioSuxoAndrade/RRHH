@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Evaluaciones de Desempeño</title>
+</head>
+<body>
+    <h1>Lista de Evaluaciones de Desempeño</h1>
+    <a href="/evaluaciones/crear">Registrar Nueva Evaluación</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID Evaluación</th>
+                <th>ID Candidato</th>
+                <th>ID Empleado Realiza</th>
+                <th>ID Empleado Genera</th>
+                <th>Fecha Evaluación</th>
+                <th>Puntuación</th>
+                <th>Comentario</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for evaluacion in evaluaciones %}
+            <tr>
+                <td>{{ evaluacion.id_evaluacion }}</td>
+                <td>{{ evaluacion.id_candidato }}</td>
+                <td>{{ evaluacion.id_empleado_realiza }}</td>
+                <td>{{ evaluacion.id_empleado_genera }}</td>
+                <td>{{ evaluacion.fecha_evaluacion }}</td>
+                <td>{{ evaluacion.puntuacion }}</td>
+                <td>{{ evaluacion.comentario }}</td>
+                <td>
+                    <a href="/evaluaciones/editar/{{ evaluacion.id_evaluacion }}">Editar</a>
+                    <a href="/evaluaciones/eliminar/{{ evaluacion.id_evaluacion }}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/">
+        <button>Volver a la pantalla principal</button>
+    </a>
+</body>
+</html>

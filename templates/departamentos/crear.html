@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Departamento</title>
+</head>
+<body>
+    <h1>Registrar Nuevo Departamento</h1>
+    <form method="POST">
+        <label for="id_jefe">ID Jefe:</label>
+        <input type="number" name="id_jefe" required>
+        <br>
+        <label for="nom_departamento">Nombre del Departamento:</label>
+        <input type="text" name="nom_departamento" required>
+        <br>
+        <label for="descripcion">Descripción:</label>
+        <textarea name="descripcion"></textarea>
+        <br>
+        <button type="submit">Registrar</button>
+    </form>
+    <br>
+    <a href="/departamentos">
+        <button>Volver a la lista de departamentos</button>
+    </a>
+</body>
+</html>
